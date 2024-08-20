@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Friendship Calculator Made by GARVIT for PRATISHTHA</h1>
+    <div>
+        <label for="name1">Enter the first name:</label><br>
+        <input type="text" id="name1" placeholder="First name"><br>
+
+        <label for="name2">Enter the second name:</label><br>
+        <input type="text" id="name2" placeholder="Second name"><br>
+
+        <button onclick="calculateFriendship()">Calculate</button>
+    </div>
+    <h2 id="result"></h2>
+
+    <script>
+        function calculateFriendship() {
+            const name1 = document.getElementById('name1').value.toLowerCase();
+            const name2 = document.getElementById('name2').value.toLowerCase();
+            let percentage;
+
+            if (name1.includes('garvit') || name2.includes('garvit')) {
+                percentage = 100;
+            } else {
+                percentage = Math.floor(Math.random() * 101);
+            }
+
+            document.getElementById('result').innerText = `The friendship percentage between ${name1} and ${name2} is ${percentage}%.`;
+        }
+    </script>
+</body>
+</html>
